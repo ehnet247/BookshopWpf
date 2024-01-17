@@ -22,25 +22,25 @@
         </Grid.RowDefinitions>
 
         <Controls:Tile Title="Address Box"  Width="260" VerticalAlignment="Center" HorizontalAlignment="Center"
-               Height="130" Grid.Row="0" Grid.Column="0" Background="#0093a6">
+               Height="130" Grid.Row="0" Grid.Column="0" Background="#0093a6" Visibility="Collapsed">
             <fa:ImageAwesome Icon="AddressCard" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
 
         <Controls:Tile Title="Calendar"  Width="260"  Grid.Row="0" Grid.Column="1" Background="#613cbc"
-               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
+               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
             <fa:ImageAwesome Icon="Calendar" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
 
         <Controls:Tile Title="IE"  Width="130"  Grid.Row="0" Grid.Column="2" Background="#2b84ee"
-               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
+               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
             <fa:ImageAwesome Icon="InternetExplorer" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="60" Height="60" />
         </Controls:Tile>
 
         <Controls:Tile Title="Youtube"  Width="130"  Grid.Row="0" Grid.Column="3" Background="#008e00"
-               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
+               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
             <fa:ImageAwesome Icon="YoutubePlay" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
@@ -53,18 +53,18 @@
         </Controls:Tile>
 
         <Controls:Tile Title="Gallery"  Width="260"  Grid.Row="1" Grid.Column="1"
-               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#0090a4">
+               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#0090a4" Visibility="Collapsed">
             <fa:ImageAwesome Icon="Image" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
 
         <Controls:Tile Title="Windows"  Width="130"  Grid.Row="1" Grid.Column="2"
-               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#9e00a5">
+               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#9e00a5" Visibility="Collapsed">
             <fa:ImageAwesome Icon="Windows" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
         <Controls:Tile Title="Skype"  Width="130"  Grid.Row="1" Grid.Column="3" Background="#0a55be"
-               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
+               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
             <fa:ImageAwesome Icon="Skype" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
@@ -72,31 +72,31 @@
         <!--Row-3-->
 
         <Controls:Tile Title="Wechat"  Width="260" VerticalAlignment="Center" HorizontalAlignment="Center"
-               Height="130" Grid.Row="2" Grid.Column="0" Background="#9f00a7">
+               Height="130" Grid.Row="2" Grid.Column="0" Background="#9f00a7" Visibility="Collapsed">
             <fa:ImageAwesome Icon="Wechat" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
-        <Controls:Tile Title="Bar Chart"  Width="260"  Grid.Row="2" Grid.Column="1" Background="#00a100"
+        <Controls:Tile Title="Stock"  Width="260"  Grid.Row="2" Grid.Column="1" Background="#00a100"
                Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
             <fa:ImageAwesome Icon="BarChart" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
 
-        <Controls:Tile Title="HandSpock"  Width="260"  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"
+        <Controls:Tile Title="Accounts"  Width="260"  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"
                Height="130" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#5938b4">
-            <fa:ImageAwesome Icon="HandSpockOutline" VerticalAlignment="Center" HorizontalAlignment="Center" 
+            <fa:ImageAwesome Icon="Users" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
         <!--Row-4-->
 
         <Controls:Tile Title="Desktop"  Width="260" VerticalAlignment="Top" HorizontalAlignment="Center"
-               Height="130" Grid.Row="3" Grid.Column="0" Background="#3183d9">
+               Height="130" Grid.Row="3" Grid.Column="0" Background="#3183d9" Visibility="Collapsed">
             <fa:ImageAwesome Icon="Desktop" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
-        <Controls:Tile Title="Whatsapp"  Width="260"  Grid.Row="3" Grid.Column="1" Background="#2e8bef"
+        <Controls:Tile Title="Pay"  Width="260"  Grid.Row="3" Grid.Column="1" Background="#2e8bef"
                Height="130" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <fa:ImageAwesome Icon="Whatsapp" VerticalAlignment="Center" HorizontalAlignment="Center" 
+            <fa:ImageAwesome Icon="ShoppingBasket" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
 
