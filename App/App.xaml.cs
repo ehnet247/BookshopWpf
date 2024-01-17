@@ -30,6 +30,11 @@ public partial class App : Application
 
     protected override async void OnExit(ExitEventArgs e)
     {
+        // Close every subwindow
+        foreach (var service in AppHost!.Services.GetServices<IBookshopService>())
+        {
+            service?.Close();
+        }
         await AppHost!.StopAsync();
         base.OnExit(e);
     }
