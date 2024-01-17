@@ -33,5 +33,11 @@ namespace BookshopWpf
             var stockWindow = App.AppHost!.Services.GetRequiredService<StockWindow>();
             stockWindow.Show();
         }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            var settingsWindow = App.AppHost!.Services.GetRequiredService<SettingsWindow>();
+            settingsWindow.Show();
+        }
     }
 }
