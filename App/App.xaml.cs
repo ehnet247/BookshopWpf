@@ -1,20 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System.Windows;
-using System.Xaml;
-using System.Xml;
 
-namespace BookshopWpf
+namespace BookshopWpf;
+public partial class App : Application
 {
-    public partial class App : Application
+    public static IHost? AppHost { get; private set; }
+
+    public App()
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
-        {
-        }
+        AppHost = Host.CreateDefaultBuilder()
+            .ConfigureServices((hostContext, services) =>
+            {
+                services.AddSingleton<MainMenu>();
+            })
+            .Build();
     }
 
+    protected override async void OnStartup(StartupEventArgs e)
+    {
+        await AppHost!.StartAsync();
+        var startupWindow = AppHost.Services.GetRequiredService<MainMenu>();
+        startupWindow.Show();
+        base.OnStartup(e);
+    }
+
+    protected override async void OnExit(ExitEventArgs e)
+    {
+        await AppHost!.StopAsync();
+        base.OnExit(e);
+    }
 }
