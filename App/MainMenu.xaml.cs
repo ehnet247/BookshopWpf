@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BookshopWpf
 {
@@ -25,6 +26,12 @@ namespace BookshopWpf
         public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void Stock_Click(object sender, RoutedEventArgs e)
+        {
+            var stockWindow = App.AppHost!.Services.GetRequiredService<StockWindow>();
+            stockWindow.Show();
         }
     }
 }

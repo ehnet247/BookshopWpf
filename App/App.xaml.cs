@@ -14,6 +14,7 @@ public partial class App : Application
             .ConfigureServices((hostContext, services) =>
             {
                 services.AddSingleton<MainMenu>();
+                services.AddTransient<StockWindow>();
             })
             .Build();
     }

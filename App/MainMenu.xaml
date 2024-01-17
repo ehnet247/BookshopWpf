@@ -77,7 +77,8 @@
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>
         <Controls:Tile Title="Stock"  Width="260"  Grid.Row="2" Grid.Column="1" Background="#00a100"
-               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
+               Height="130" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Click="Stock_Click">
             <fa:ImageAwesome Icon="BarChart" VerticalAlignment="Center" HorizontalAlignment="Center" 
                          Foreground="White" Width="80" Height="80" />
         </Controls:Tile>

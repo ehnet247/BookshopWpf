@@ -19,7 +19,7 @@
         <DataGrid Grid.Row="1"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{DynamicResource TitleHeader}"
+                <DataGridTextColumn Header="{DynamicResource TitleHeader}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
