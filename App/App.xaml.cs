@@ -1,41 +1,61 @@
 ﻿
+using BookshopWpf.Login;
+using BookshopWpf.Settings;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
 
-namespace BookshopWpf;
-public partial class App : Application
+namespace BookshopWpf
 {
-    public static IHost? AppHost { get; private set; }
-
-    public App()
+    public partial class App : Application
     {
-        AppHost = Host.CreateDefaultBuilder()
-            .ConfigureServices((hostContext, services) =>
-            {
-                services.AddSingleton<MainMenu>();
-                services.AddTransient<StockWindow>();
-                services.AddTransient<SettingsWindow>();
-            })
-            .Build();
-    }
+        public static IHost? AppHost { get; private set; }
 
-    protected override async void OnStartup(StartupEventArgs e)
-    {
-        await AppHost!.StartAsync();
-        var startupWindow = AppHost.Services.GetRequiredService<MainMenu>();
-        startupWindow.Show();
-        base.OnStartup(e);
-    }
-
-    protected override async void OnExit(ExitEventArgs e)
-    {
-        // Close every subwindow
-        foreach (var service in AppHost!.Services.GetServices<IBookshopService>())
+        public App()
         {
-            service?.Close();
+            AppHost = Host.CreateDefaultBuilder()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddSingleton<MainMenu>();
+                    services.AddTransient<StockWindow>();
+                    services.AddSingleton<LoginWindow>();
+                    services.AddSingleton<SettingsWindow>();
+                })
+                .Build();
         }
-        await AppHost!.StopAsync();
-        base.OnExit(e);
+
+        protected override async void OnStartup(StartupEventArgs e)
+        {
+            await AppHost!.StartAsync();
+            
+            var loginWindow = AppHost.Services.GetRequiredService<LoginWindow>();
+            loginWindow.SetOkAction(ShowMainMenu);
+            loginWindow.SetCancelAction(ShowSettings);
+            loginWindow.Show();
+            base.OnStartup(e);
+        }
+
+        private void ShowMainMenu()
+        {
+            var startupWindow = AppHost!.Services.GetRequiredService<MainMenu>();
+            startupWindow.Show();
+        }
+
+        private void ShowSettings()
+        {
+            var settingsWindow = AppHost!.Services.GetRequiredService<SettingsWindow>();
+            settingsWindow.Show();
+        }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            // Close every subwindow
+            foreach (var service in AppHost!.Services.GetServices<IBookshopService>())
+            {
+                service?.Close();
+            }
+            await AppHost!.StopAsync();
+            base.OnExit(e);
+        }
     }
 }

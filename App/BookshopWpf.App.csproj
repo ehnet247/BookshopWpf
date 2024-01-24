@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BookshopWpf.Config\BookshopWpf.Settings.csproj" />
+    <ProjectReference Include="..\Login\BookshopWpf.Login.csproj" />
+    <ProjectReference Include="..\Settings\BookshopWpf.Settings.csproj" />
     <ProjectReference Include="..\Stock\BookshopWpf.Stock.csproj" />
   </ItemGroup>
 

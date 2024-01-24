@@ -16,8 +16,7 @@ using MahApps.Metro;
 using MahApps.Metro.Controls;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BookshopWpf
-{
+namespace BookshopWpf;
     /// <summary>
     /// Interaction logic for MainMenu.xaml
     /// </summary>
@@ -36,8 +35,7 @@ namespace BookshopWpf
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            var settingsWindow = App.AppHost!.Services.GetRequiredService<SettingsWindow>();
-            settingsWindow.Show();
+            //var settingsWindow = App.AppHost!.Services.GetRequiredService<SettingsWindow>();
+            //settingsWindow.Show();
         }
     }
-}
