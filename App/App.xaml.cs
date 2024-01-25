@@ -18,6 +18,7 @@ namespace BookshopWpf
                 {
                     services.AddSingleton<MainMenu>();
                     services.AddTransient<StockWindow>();
+                    services.AddSingleton<ILoginWindowActions, LoginWindowActions>();
                     services.AddSingleton<LoginWindow>();
                     services.AddSingleton<SettingsWindow>();
                 })
@@ -27,10 +28,12 @@ namespace BookshopWpf
         protected override async void OnStartup(StartupEventArgs e)
         {
             await AppHost!.StartAsync();
-            
+            //AppHost!.Start();
+
+            var loginWindowActions = AppHost.Services.GetRequiredService<ILoginWindowActions>();
+            loginWindowActions.CancelAction = ShowSettings;
+            loginWindowActions.OkAction = ShowMainMenu;
             var loginWindow = AppHost.Services.GetRequiredService<LoginWindow>();
-            loginWindow.SetOkAction(ShowMainMenu);
-            loginWindow.SetCancelAction(ShowSettings);
             loginWindow.Show();
             base.OnStartup(e);
         }

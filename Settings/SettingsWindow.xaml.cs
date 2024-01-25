@@ -20,5 +20,15 @@ namespace BookshopWpf.Settings
         {
             InitializeComponent();
         }
+
+        private void ButtonOk_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
